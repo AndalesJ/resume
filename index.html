@@ -5,24 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+       body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      justify-content: left;
+    }
         h1, h2, h3 {
             margin-bottom: 10px;
         }
         ul {
             margin-top: 0;
         }
+
+        .profile-img {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-img img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+    }
+
+    #skills, #experience, #awards {
+        list-style: none;
+    }
+
     </style>
+    
 </head>
 <body>
+<div class="container">
 
-<h1>Education</h1>
-<h2 id="degree"></h2>
-<p id="year"></p>
-<p id="university"></p>
+    <div class="profile-img">
+        <img src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg" alt="Profile Picture">
+      </div>
+
+    <h1>Contact Information</h1>
+    <p id="name"></p>
+    <p id="address"></p>
+    <p id="phonenumber"></p>
+    <p id="email"></p>
+    <p id="birthdate"></p>
+    <p id="sex"></p>
+
+
 
 <h1>Skills</h1>
 <ul id="skills"></ul>
@@ -30,17 +68,15 @@
 <h1>Experience</h1>
 <ul id="experience"></ul>
 
-<h1>Awards and Achievementss</h1>
+<h1>Awards and Achievements</h1>
 <ul id="awards"></ul>
 
-<h1>Contact Information</h1>
-<p id="name"></p>
-<p id="address"></p>
-<p id="phoneNumber"></p>
-<p id="email"></p>
-<p id="birthdate"></p>
-<p id="sex"></p>
+<h1>Education</h1>
+<h2 id="degree"></h2>
+<p id="year"></p>
+<p id="university"></p>
 
+</div>
 <script>
     fetch('https://index-js-m4yd.onrender.com/')
     .then(response => response.json())
@@ -70,12 +106,12 @@
             awardsList.appendChild(li);
         });
 
-        document.getElementById('name').innerText = data.personalInfo.name;
-        document.getElementById('address').innerText = data.personalInfo.address;
-        document.getElementById('phoneNumber').innerText = data.personalInfo.phoneNumber;
-        document.getElementById('email').innerText = data.personalInfo.email;
-        document.getElementById('birthdate').innerText = data.personalInfo.birthdate;
-        document.getElementById('sex').innerText = data.personalInfo.sex;
+        document.getElementById('name').innerText = "Name: " + data.personalInfo.name;
+        document.getElementById('address').innerText = "Address: " + data.personalInfo.address;
+        document.getElementById('phonenumber').innerText = "Phone Number: " + data.personalInfo.phonenumber;
+        document.getElementById('email').innerText = "Email: " + data.personalInfo.email;
+        document.getElementById('birthdate').innerText = "Birthdate: " + data.personalInfo.birthdate;
+        document.getElementById('sex').innerText = "Sex: " + data.personalInfo.sex;
     })
     .catch(error => {
         console.error('Error fetching data:', error);
