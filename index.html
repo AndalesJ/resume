@@ -33,15 +33,17 @@
       margin-bottom: 20px;
     }
     .profile-img img {
-      width: 150px;
-      height: 150px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
     }
 
     #skills, #experience, #awards {
         list-style: none;
     }
-
+    hr.line1, .line2, .line3, .line4, .line5, .line6 {
+  border-top: 1px solid black;
+}
     </style>
     
 </head>
@@ -49,9 +51,9 @@
 <div class="container">
 
     <div class="profile-img">
-        <img src="https://t3.ftcdn.net/jpg/02/99/04/20/360_F_299042079_vGBD7wIlSeNl7vOevWHiL93G4koMM967.jpg" alt="Profile Picture">
+        <img src="https://staticdelivery.nexusmods.com/mods/1704/images/thumbnails/118153/118153-1714424182-1806356445.jpeg" alt="Profile Picture">
       </div>
-
+<hr class="line1"></hr.>
     <h1>Contact Information</h1>
     <p id="name"></p>
     <p id="address"></p>
@@ -59,23 +61,23 @@
     <p id="email"></p>
     <p id="birthdate"></p>
     <p id="sex"></p>
-
+    <hr class="line2"></hr.>
 
 
 <h1>Skills</h1>
 <ul id="skills"></ul>
-
+<hr class="line3"></hr.>
 <h1>Experience</h1>
 <ul id="experience"></ul>
-
+<hr class="line4"></hr.>
 <h1>Awards and Achievements</h1>
 <ul id="awards"></ul>
-
+<hr class="line5"></hr.>
 <h1>Education</h1>
 <h2 id="degree"></h2>
 <p id="year"></p>
 <p id="university"></p>
-
+<hr class="line6"></hr.>
 </div>
 <script>
     fetch('https://index-js-m4yd.onrender.com/')
